@@ -4,8 +4,9 @@ import "fmt"
 
 func main() {
 	fmt.Println("Hello, World!")
-	var x int = 5
-	var y int = 7
-	var sum int = x + y
-	fmt.Println(sum)
+	fmt.Println(sum(5, 5))
+}
+
+func sum(x int, y int) int {
+	return x + y
 }
