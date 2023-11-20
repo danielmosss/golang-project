@@ -1,10 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func main() {
 	fmt.Println("Hello, World!")
-	fmt.Println(sum(5, 5))
+
+	var randomX int = (rand.Int() * 100)
+	var randomY int = (rand.Int() * 100)
+	var sum int = sum(randomX, randomY)
+	fmt.Println("Sum of", randomX, "and", randomY, "is", sum)
 }
 
 func sum(x int, y int) int {
