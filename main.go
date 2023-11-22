@@ -2,7 +2,7 @@ package main
 
 import (
 	"bufio"
-	"cheProject/requests"
+	"cheProject/handlers"
 	"fmt"
 	"net/http"
 	"os"
@@ -18,16 +18,11 @@ func main() {
 }
 
 func createServer(port string) {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		switch r.URL.Path {
-		case "/":
-			requests.HelloWorldHandler(w, r)
-		case "/html":
-			requests.HtmlHandler(w, r)
-		default:
-			w.WriteHeader(http.StatusNotFound)
-		}
-	})
+	http.HandleFunc("/", handlers.HelloWorld)
+	http.HandleFunc("/ai", handlers.AiWebsite)
+	//http.HandleFunc("/", func(response http.ResponseWriter, request *http.Request) {
+	//	response.WriteHeader(http.StatusNotFound)
+	//})
 
 	server := http.Server{
 		Addr:         ":" + port,
