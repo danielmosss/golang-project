@@ -2,17 +2,45 @@ package main
 
 import (
 	"bufio"
+	"cheProject/requests"
 	"fmt"
+	"net/http"
 	"os"
 	"strconv"
 	"strings"
 )
 
-func main() {
-	fmt.Println("Hello, Kids!")
+var port string = "8080"
 
+func main() {
+	fmt.Println("Server is running on: " + port)
+	createServer(port)
+}
+
+func createServer(port string) {
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		switch r.URL.Path {
+		case "/":
+			requests.HelloWorldHandler(w, r)
+		case "/html":
+			requests.HtmlHandler(w, r)
+		default:
+			w.WriteHeader(http.StatusNotFound)
+		}
+	})
+
+	server := http.Server{
+		Addr:         ":" + port,
+		Handler:      nil,
+		ReadTimeout:  1000,
+		WriteTimeout: 1000,
+	}
+
+	server.ListenAndServe()
+}
+
+func createPersonFunction() {
 	var person = createPerson()
-	fmt.Println("Person created!")
 	fmt.Println("Name: " + person.name)
 	fmt.Println("Age: " + strconv.Itoa(person.age))
 	fmt.Println("Weight: " + strconv.FormatFloat(person.weight, 'f', 2, 64))
@@ -20,7 +48,6 @@ func main() {
 	fmt.Printf("Street: %s \n", person.address.street)
 	fmt.Printf("Number: %d \n", person.address.number)
 	fmt.Printf("Postcode: %d%s \n", person.address.postcode.numbers, person.address.postcode.letters)
-
 }
 
 func ReadConsole(deleteLines ...int) string {

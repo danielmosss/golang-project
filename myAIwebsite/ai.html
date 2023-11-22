@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniël Mosselman - Software Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ai.css">
+</head>
+<body>
+  <a class="ai-warning">This is my AI generated website.</a>
+
+  <div class="container">
+    <h1 class="title">Hi there! My name is Daniël Mosselman</h1>
+    <div class="info">
+      <p class="message">
+        I'm a software engineer experienced in building websites, web apps, and custom solutions using Angular,
+        JavaScript, TypeScript, and Node.js.
+        I'm passionate about learning and staying up-to-date with the latest web tech.<br><br>
+        Check out my recent projects and experience and reach out to connect!
+      </p>
+    </div>
+
+    <div class="socials">
+      <a href="https://linkedin.com/in/daniël-mosselman-594400188" target="_blank" class="social-link" aria-label="LinkedIn">
+        <img src="assets/logos/linkedin.jpg" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/danielmosss" target="_blank" class="social-link" aria-label="GitHub">
+        <img src="assets/logos/github.jpg" alt="GitHub">
+      </a>
+      <a href="mailto:dmmoselman@student.che.nl" class="social-link" aria-label="Email">
+        <img src="assets/logos/email.jpg" alt="Email">
+      </a>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2023 Daniël Mosselman</p>
+  </footer>
+
+  <script src="ai.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #B19CD9, #20B2AA, #1E90FF);
+      color: #333;
+    }
+
+    nav {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 0.5em;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-content a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .ai-warning {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(135,206,235, 0.9);
+      color: #fff;
+      padding: 0.5em;
+      text-decoration: none;
+      font-size: 0.8em;
+      z-index: 1000;
+    }
+
+    .container {
+      width: 60%;
+      padding: 2em;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+      margin: 5em 0;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 2.5em;
+      margin-bottom: 1em;
+    }
+
+    .info .message, .socials {
+      margin-bottom: 2em;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-link:hover {
+      transform: scale(1.2);
+    }
+
+    .social-link img {
+      width: 100%;
+      height: 100%;
+    }
+
+    footer {
+      padding: 1em;
+      width: 100%;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+      }
+
+      .title {
+        font-size: 2em;
+      }
+
+      .ai-warning {
+        font-size: 0.7em;
+        padding: 0.3em;
+      }
+
+      nav, footer {
+        display: none;
+      }
+    }
+
+  </style>
+</body>
+</html>
